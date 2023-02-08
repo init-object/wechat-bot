@@ -6,8 +6,7 @@ on:
       - v*
 
 env:
-  APP_NAME: qqwry-update
-  DOCKERHUB_REPO: initobject/qqwry-update
+  APP_NAME: wechat-bot
 
 jobs:
 
@@ -40,5 +39,5 @@ jobs:
           APP_NAME=${{ env.APP_NAME }}
           APP_VERSION=${{ env.APP_VERSION }}
         tags: |
-          ${{ env.DOCKERHUB_REPO }}:latest
-          ${{ env.DOCKERHUB_REPO }}:${{ env.APP_VERSION }}
+          ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.APP_NAME }}:latest
+          ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.APP_NAME }}:${{ env.APP_VERSION }}
