@@ -41,6 +41,7 @@ WORKDIR /app
 
 COPY package.json ./
 RUN npm i
+RUN npm i wechaty-puppet-wechat4u --save
 
 COPY *.js ./
 COPY src/ ./src/
